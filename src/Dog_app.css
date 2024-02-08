@@ -1,0 +1,51 @@
+*{
+  box-sizing: border-box;
+  text-align: center;
+}
+.error {
+    font-weight: bold;
+    background-color: rgb(255, 190, 190);
+    border: 3px solid red;
+    border-radius: 10px;
+    padding: 1em;
+    width: 50%;
+    text-align:center;
+    margin: 1em auto
+}
+
+button {
+  display: block;
+  margin: 2em auto;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  padding: 1em;
+  border: 0px;
+  border-radius: 10px;
+}
+
+.img-container {
+  width: 30%;
+  aspect-ratio: 1;
+  border: 2px solid blue;
+  border-radius: 50%;
+  margin: auto;
+  overflow:hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+fieldset {
+  width: 10%;
+}
+
+legend {
+  text-align: center;
+}
+  

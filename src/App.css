@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}
+nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+    font-size: medium;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+p {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: .5em;
+}
+
+.active {
+    background-color: blue;
+    color: white;
+}
+
+input {
+    margin-top: 2em;
+}
+
+.recipe-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.recipe {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2em 0em;
+}
+
+.img-container{
+    margin-top: 1em;
+}
