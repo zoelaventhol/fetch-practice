@@ -10,14 +10,14 @@ export default function App() {
         <nav>
             {/* click "dogs" for Dog_app */}
             <p 
-                class={page === 'dogs' ? 'active' : null}  
+                className={page === 'dogs' ? 'active' : null}  
                 onClick={() => setPage("dogs")}>
                 Dogs 🐕
             </p>
 
             {/* click "food" for Food_app */}
             <p 
-                class={page === 'food' ? 'active' : null} 
+                className={page === 'food' ? 'active' : null} 
                 onClick={() => setPage("food")}>
                 Food 🍲
             </p>
