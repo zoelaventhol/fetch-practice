@@ -16,7 +16,7 @@ function Food_app() {
 
   const getRecipe = async () => {
     const api_key = "7076ba7d49794b4f868f5d5f3260d659";
-    const api_url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient}&number=6&apiKey=${api_key}`;
+    const api_url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient}&apiKey=${api_key}`;
 
     try {
       let response = await fetch(api_url);
