@@ -5,6 +5,16 @@ function Food_app() {
   const [ingredient, setIngredient] = useState("");
   const [recipes, setRecipes] = useState(null);
 
+  /****** TO DO: 
+   1. Go to https://spoonacular.com/, make a free account and get an API key. Update your api_key below.
+   2. Read the documentation for searching by ingredients: https://spoonacular.com/food-api/docs#Search-Recipes-by-Ingredients
+   3. Update your api_url. 
+      HINT: You will need to include the "ingredient" you're searching for. 
+      HINT: You will need to include your api_key at the end of the URL using "&apiKey=${api_key}"
+  ******/
+  const api_key = 'TBD';
+  const api_url = 'TBD';
+
   const handleChange = (e) => {
     setIngredient(e.target.value);
   };
@@ -14,22 +24,9 @@ function Food_app() {
     getRecipe();
   };
 
+  // ****** TO DO: write fetch using your api_url
   const getRecipe = async () => {
-    const api_key = "7076ba7d49794b4f868f5d5f3260d659";
-    const api_url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient}&number=6&apiKey=${api_key}`;
-
-    try {
-      let response = await fetch(api_url);
-      if (!response.ok) throw new Error("Something went wrong");
-      else {
-        let data = await response.json();
-        setRecipes(data);
-        console.log(data);
-      }
-    } catch (error) {
-      // TODO: store the error info in a state variable
-      console.log("Server error: ", error);
-    }
+    console.log("Mmmmm... 😋")
   };
 
   return (
@@ -43,18 +40,8 @@ function Food_app() {
         <button type="submit">Search</button>
       </form>
 
-      {recipes && (
-        <div class = "recipe-results">
-          {recipes.map((r) => (
-            <div class="recipe" key={r.id}>
-              {r.title}
-              <div class = "img-container">
-                <img src={r.image} />
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      {/*****  TO DO: if there are recipes, display them *****/}
+      (recipes will go here)
     </div>
   );
 }
