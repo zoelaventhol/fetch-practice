@@ -23,7 +23,26 @@ function Dog_app() {
 
   // ***** TO DO: complete this fetch using the api_url defined above) ***** 
   async function getDog() {
-    console.log("hey there 👋")
+    setLoading(true);
+    // this is what we want to do
+    try {
+      // fetch
+      const response = await fetch(api_url)
+  
+      // when we receive fetch response, we need to use .json() - because we need to convert it to JS
+      const data = await response.json()
+      setDog(data.message);
+      // reset error
+      setError(null);
+    } catch (err) {
+      // this is what we do if it doesn't work
+      setError(err.stack.slice(0,40));
+      setDog(null);
+      console.log(err.stack);
+    } finally {
+      // whatever happened, do this at the end
+      setLoading(false);
+    } 
   };
 
 
@@ -40,7 +59,19 @@ function Dog_app() {
 
       
       {/*****  TO DO: if there is an error or a dog, display it *****/}
-      (dog will go here)
+      { error &&
+        <div className = "error">
+          {error}
+        </div>
+      }
+      
+      { dog &&
+        <div className="img-container">
+          {/* if loading, show loading img. else show dog */}
+          <img src ={loading ? loadingImg : dog}/>
+        </div>
+      }
+      
 
     </>
   )
