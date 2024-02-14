@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Dog_app.css";
-// import Form from "./Form";
 
 function Dog_app() {
   // ************** STATE & VARIABLES: WHAT WE HAVE **********************
@@ -12,7 +11,7 @@ function Dog_app() {
   const api_url = `https://dog.ceo/api/breeds/image/random`;
     
   
-  // ***********************FUNCTIONS: WHAT WE DO*********************
+  // *********************** FUNCTIONS: WHAT WE DO *********************
   const handleSubmit = (e) => {
     // prevent page reload
     e.preventDefault();
@@ -21,32 +20,15 @@ function Dog_app() {
     getDog();
   };  
 
-  // ***** TO DO: complete this fetch using the api_url defined above) ***** 
+  /***** 
+  TO DO: complete this fetch using the api_url defined above. 
+  You may use try/catch or async/await syntax.
+  *****/
   async function getDog() {
-    setLoading(true);
-    // this is what we want to do
-    try {
-      // fetch
-      const response = await fetch(api_url)
-  
-      // when we receive fetch response, we need to use .json() - because we need to convert it to JS
-      const data = await response.json()
-      setDog(data.message);
-      // reset error
-      setError(null);
-    } catch (err) {
-      // this is what we do if it doesn't work
-      setError(err.stack.slice(0,40));
-      setDog(null);
-      console.log(err.stack);
-    } finally {
-      // whatever happened, do this at the end
-      setLoading(false);
-    } 
   };
 
 
-  // *************RETURN: WHAT WE SEE*********************
+  // ************* RETURN: WHAT WE SEE *********************
   return (
     <>
       <h1>Fetch a Dog</h1>
@@ -59,18 +41,6 @@ function Dog_app() {
 
       
       {/*****  TO DO: if there is an error or a dog, display it *****/}
-      { error &&
-        <div className = "error">
-          {error}
-        </div>
-      }
-      
-      { dog &&
-        <div className="img-container">
-          {/* if loading, show loading img. else show dog */}
-          <img src ={loading ? loadingImg : dog}/>
-        </div>
-      }
       
 
     </>
